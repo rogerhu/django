@@ -67,4 +67,3 @@ Bugfixes
 
 * Fixed ``isnull`` query lookup for ``ForeignObject()``
   (:ticket:`25972`).
-

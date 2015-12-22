@@ -399,10 +399,8 @@ class MultiColumnFKTests(TestCase):
         self.assertEqual(list(Membership.objects.filter(person__isnull=True)), [])
 
         Membership.objects.create(membership_country=self.usa, person=self.bob, group=self.cia)
-        self.assertQuerysetEqual(
-                Membership.objects.filter(person__isnull=False),
-                ['<Membership: Bob is a member of CIA>']
-            )
+        self.assertQuerysetEqual(Membership.objects.filter(person__isnull=False),
+                                 ['<Membership: Bob is a member of CIA>'])
 
 
 class TestModelCheckTests(SimpleTestCase):
